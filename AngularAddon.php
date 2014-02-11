@@ -1,6 +1,6 @@
 <?php
 /**
- * File Name AnuglarDropIn.php
+ * File Name AngularAddon.php
  * @package WordPress
  * @subpackage ProjectName
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -14,13 +14,13 @@
 
 
 /**
- * AnuglarDropIn
+ * AngularAddon
  *
  * @version 1.0
  * @updated 00.00.00
  **/
-$AnuglarDropIn = new AnuglarDropIn();
-class AnuglarDropIn {
+$AngularAddon = new AngularAddon();
+class AngularAddon {
 	
 	
 	
@@ -57,9 +57,9 @@ class AnuglarDropIn {
 	 **/
 	function __construct() {
 		
-		$this->set( 'settings', new AnuglarDropInSettings() );
-		$this->set( 'template_path', get_stylesheet_directory() . "/addons/AnuglarDropIn/" );
-		$this->set( 'template_directory', get_stylesheet_directory_uri() . "/addons/AnuglarDropIn" );
+		$this->set( 'settings', new AngularAddonSettings() );
+		$this->set( 'template_path', get_stylesheet_directory() . "/addons/AngularAddon/" );
+		$this->set( 'template_directory', get_stylesheet_directory_uri() . "/addons/AngularAddon" );
 
 		// hook method after_setup_theme
 		// add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
@@ -240,7 +240,7 @@ class AnuglarDropIn {
 		wp_register_script( 'angular', "//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js", array( 'jquery' ) );
 		// wp_register_script( 'angular-file-upload', "$this->template_directory/js/angular-file-upload.js" );
 		// wp_register_script( 'angular-match', "$this->template_directory/js/angular-match.js" );
-		wp_register_script( 'AnuglarDropIn', "$this->template_directory/js/AnuglarDropIn.js", array('angular') );
+		wp_register_script( 'AngularAddon', "$this->template_directory/js/AngularAddon.js", array('angular') );
 		
 	} // end function register_style_and_scripts
 	
@@ -257,12 +257,12 @@ class AnuglarDropIn {
 	 **/
 	function wp_enqueue_scripts() {
 		
-		wp_localize_script( 'AnuglarDropIn', 'AnuglarDropInObj', array(
+		wp_localize_script( 'AngularAddon', 'AngularAddonObj', array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 	        'action' => $this->settings->action,
 			'nonce' => wp_create_nonce($this->settings->action)
 		) );
-		wp_enqueue_script( 'AnuglarDropIn' );
+		wp_enqueue_script( 'AngularAddon' );
 		
 	} // end function wp_enqueue_scripts 
 	
@@ -321,4 +321,4 @@ class AnuglarDropIn {
 	
 	
 	
-} // end class AnuglarDropIn
+} // end class AngularAddon

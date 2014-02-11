@@ -9,9 +9,9 @@
 #################################################################################################### */
 
 
-if ( ! defined('AnuglarDropIn_INIT') ) {
+if ( ! defined('AngularAddon_INIT') ) {
 	
-	class AnuglarDropInSettings {		
+	class AngularAddonSettings {		
 		
 		
 		/**
@@ -40,21 +40,21 @@ if ( ! defined('AnuglarDropIn_INIT') ) {
 		 * @access public
 		 * @var string
 		 **/
-		var $appName = 'AnuglarDropIn';
+		var $appName = 'AngularAddon';
 		
 		
-	}; // end class AnuglarDropInSettings
+	}; // end class AngularAddonSettings
 	
 	
 	
 	// Classes
-	require_once( "AnuglarDropIn.php" );
+	require_once( "AngularAddon.php" );
 	if ( isset( $_POST['action'] ) AND ! empty( $_POST['action'] ) ) {
 		require_once( "AjaxClassName.php" );
 	}
 	
-	define( 'AnuglarDropIn_INIT', true );
+	define( 'AngularAddon_INIT', true );
 	
 	
 	
-} // end if ( ! defined('AnuglarDropIn_INIT') )
+} // end if ( ! defined('AngularAddon_INIT') )
